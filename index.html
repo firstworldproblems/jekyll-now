@@ -297,7 +297,14 @@ html,
 <br>
 <br>
 <br>
-  <audio controls autoplay>
+
+
+
+<iframe src="https://old.undergroundhiphop.com/media/audios/128kbps/oldschool/WuTangClan_CREAM_OldSchool_128.mp3" type="audio/mpeg" allow="autoplay" style="display:none" id="iframeAudio">
+</iframe> 
+
+
+  <audio controls autoplay id="playAudio">
   <source src="https://old.undergroundhiphop.com/media/audios/128kbps/oldschool/WuTangClan_CREAM_OldSchool_128.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
@@ -324,6 +331,25 @@ Your browser does not support the audio element.
   gtag('js', new Date());
 
   gtag('config', 'UA-129361098-1');
+</script>
+
+
+
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+  var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+    if(!isChrome){
+      $('#iframeAudio').remove()
+    }
+  else{
+     $('#playAudio').remove() //just to make sure that it will not have 2x audio in the background 
+  }
+});
+  
+
 </script>
 
    
